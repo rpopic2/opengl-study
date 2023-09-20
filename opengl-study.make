@@ -31,7 +31,7 @@ INCLUDES += -Iinclude
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-LIBS += -framework OpenGL -lglfw.3.3
+LIBS += -framework OpenGL -lglfw.3.3 -lGLEW.2.2.0
 LDDEPS +=
 ALL_LDFLAGS += $(LDFLAGS) -Llibs
 LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
@@ -48,7 +48,7 @@ TARGET = $(TARGETDIR)/opengl-study
 OBJDIR = obj/Debug
 DEFINES += -DDEBUG
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++17
 
 else ifeq ($(config),release)
 TARGETDIR = bin/Release
@@ -56,7 +56,7 @@ TARGET = $(TARGETDIR)/opengl-study
 OBJDIR = obj/Release
 DEFINES += -DNDEBUG
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++17
 
 endif
 

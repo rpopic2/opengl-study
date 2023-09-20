@@ -9,9 +9,9 @@ project "opengl-study"
     libdirs { "libs" }
     includedirs { "include" }
 
+    cppdialect "C++17"
 
-    links { "glfw.3.3" }
-    links { "OpenGL.framework" }
+    links { "glfw.3.3", "OpenGL.framework", "GLEW.2.2.0" }
     files { "**.h", "**.cpp" }
 
     filter "configurations:Debug"

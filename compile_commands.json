@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "directory": "/Users/rpopic2/studies/opengl",
+        "file": "*.cpp",
+        "command": "/opt/homebrew/opt/llvm/bin/clang++ -Wall -std=c++17 -stdlib=libc++ -I./include"
+    }
+]
