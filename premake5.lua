@@ -11,7 +11,7 @@ project "opengl-study"
 
     cppdialect "C++17"
 
-    links { "glfw.3.3", "OpenGL.framework", "GLEW.2.2.0" }
+    links { "glfw.3.3", "CoreVideo.framework", "OpenGL.framework", "IOKit.framework", "Cocoa.framework", "Carbon.framework", "GLEW.2.2.0" }
     files { "**.h", "**.cpp" }
 
     filter "configurations:Debug"
