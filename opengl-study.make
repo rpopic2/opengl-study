@@ -70,7 +70,9 @@ endif
 GENERATED :=
 OBJECTS :=
 
+GENERATED += $(OBJDIR)/glad.o
 GENERATED += $(OBJDIR)/main.o
+OBJECTS += $(OBJDIR)/glad.o
 OBJECTS += $(OBJDIR)/main.o
 
 # Rules
@@ -135,6 +137,9 @@ endif
 # File Rules
 # #############################################
 
+$(OBJDIR)/glad.o: glad.c
+	@echo "$(notdir $<)"
+	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/main.o: main.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
